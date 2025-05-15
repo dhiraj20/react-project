@@ -12,6 +12,8 @@ import thunkStore from "./redux-thunk/index";
 
 import { ApolloClient, InMemoryCache, ApolloProvider } from "@apollo/client";
 import LearnRedux from "./redux";
+import UseActionStateHook from "./hooks/useActionState";
+import MuiTable from "./muiTable";
 
 const client = new ApolloClient({
   uri: "https://flyby-router-demo.herokuapp.com/",
@@ -34,7 +36,9 @@ function App() {
     //     <LearnRedux />
     //   </Provider>
     // </ApolloProvider>
-      <ReduxThunkExample />
+      // <ReduxThunkExample />
+      // <UseActionStateHook />
+      <MuiTable />
   );
 }
 
