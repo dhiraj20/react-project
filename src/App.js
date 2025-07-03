@@ -15,6 +15,7 @@ import LearnRedux from "./redux";
 import UseActionStateHook from "./hooks/useActionState";
 import MuiTable from "./muiTable";
 import Routing from "./routing";
+import StripeContainer from "./stripe-payment/stripe-container";
 
 const client = new ApolloClient({
   uri: "https://flyby-router-demo.herokuapp.com/",
@@ -40,7 +41,8 @@ function App() {
     // <ReduxThunkExample />
     // <UseActionStateHook />
     // <MuiTable />
-    <Routing />
+    // <Routing />
+    <StripeContainer />
   );
 }
 
