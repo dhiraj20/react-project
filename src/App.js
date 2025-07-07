@@ -16,6 +16,7 @@ import UseActionStateHook from "./hooks/useActionState";
 import MuiTable from "./muiTable";
 import Routing from "./routing";
 import StripeContainer from "./stripe-payment/stripe-container";
+import UnitTesting from "./unitTesting";
 
 const client = new ApolloClient({
   uri: "https://flyby-router-demo.herokuapp.com/",
@@ -42,7 +43,8 @@ function App() {
     // <UseActionStateHook />
     // <MuiTable />
     // <Routing />
-    <StripeContainer />
+    // <StripeContainer />
+    <UnitTesting />
   );
 }
 
