@@ -73,3 +73,29 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 Jest – the test runner and assertion library
 @testing-library/react – for rendering and testing React components
 @testing-library/jest-dom – for helpful DOM matchers like .toBeInTheDocument()
+
+
+
+
+deploy:
+    runs-on: ubuntu-latest
+    needs: build
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: 18
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./build
+          publish_branch: gh-pages

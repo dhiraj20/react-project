@@ -1,0 +1,40 @@
+name: CI/CD for React App
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build the app
+        run: npm run build
+
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v3
+        with:
+          name: 'github-pages-artifact'
+          path: build
+      - name: Deploy to github pages
+        uses: actions/github-pages@v4
+        with: 
+          token: ${{ secrets.GITHUB_TOKEN }}
+          artifact_name: 'github-pages-artifact'
+  

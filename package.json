@@ -2,6 +2,7 @@
   "name": "app",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://github.com/dhiraj20/react-project/",
   "dependencies": {
     "@apollo/client": "^3.13.8",
     "@emotion/styled": "^11.14.1",
